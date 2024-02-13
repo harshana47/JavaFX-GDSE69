@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import lk.ijse.gdse.DB.DB;
+import lk.ijse.gdse.Model.Customer;
 
 public class CustomerFormController {
 
@@ -35,6 +37,11 @@ public class CustomerFormController {
         String id = txtID.getText();
         String name = txtName.getText();
         int age = Integer.parseInt(txtAge.getText());
+
+        Customer customer = new Customer(id, name, age);
+        DB.customerArrayList.add(customer);
+
+        System.out.println(DB.customerArrayList);
     }
 
     @FXML
